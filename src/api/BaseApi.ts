@@ -1,6 +1,6 @@
 import Axios, { CancelToken } from 'axios';
 import { HTTP } from './http-common';
-import Requests from '../store/requests';
+import Requests from '@/store/requests';
 
 // Requests queue to cancel previous API requests
 const requests = new Requests();

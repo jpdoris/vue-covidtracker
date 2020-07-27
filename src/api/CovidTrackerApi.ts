@@ -5,7 +5,7 @@ import { BaseApi } from './BaseApi';
 //   headers: { 'Content-Type': 'application/json' }
 // };
 
-const proxyurl = 'https://cors-anywhere.herokuapp.com/';
+const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
 class CovidTrackerApi extends BaseApi {
   
