@@ -1,8 +1,8 @@
-import { BaseApi } from './BaseApi';
-import { EventBus } from '../event-bus';
+import { BaseApi } from "./BaseApi";
+import { EventBus } from "../event-bus";
 
 const headers = {
-  headers: { 'Content-Type': 'application/json' }
+  headers: { "Content-Type": "application/json" }
 };
 
 class SharedApi extends BaseApi {
@@ -22,10 +22,10 @@ class SharedApi extends BaseApi {
     };
     try {
       const savedUrl = await this.post(url, params, headers);
-      EventBus.$emit('api-endpoint-success-save-shared-state');
+      EventBus.$emit("api-endpoint-success-save-shared-state");
       return savedUrl;
     } catch (error) {
-      EventBus.$emit('api-endpoint-error-save-shared-state');
+      EventBus.$emit("api-endpoint-error-save-shared-state");
       return error;
     }
   }

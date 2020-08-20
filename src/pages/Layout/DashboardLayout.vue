@@ -9,8 +9,12 @@
       <mobile-menu slot="content"></mobile-menu>
       <sidebar-link to="/dashboard">
         <md-icon>dashboard</md-icon>
-        <p>Dashboard</p>
+        <p>Covid-19 Stats Dashboard</p>
       </sidebar-link>
+      <!-- <sidebar-link to="/timeline">
+        <md-icon>timeline</md-icon>
+        <p>Timeline</p>
+      </sidebar-link> -->
       <sidebar-link to="/user">
         <md-icon>person</md-icon>
         <p>User Profile</p>
@@ -35,10 +39,6 @@
         <md-icon>notifications</md-icon>
         <p>Notifications</p>
       </sidebar-link>
-      <sidebar-link to="/upgrade" class="active-pro">
-        <md-icon>unarchive</md-icon>
-        <p>Upgrade to PRO</p>
-      </sidebar-link>
     </side-bar>
 
     <div class="main-panel">
@@ -52,7 +52,7 @@
 
       <dashboard-content> </dashboard-content>
 
-      <content-footer v-if="!$route.meta.hideFooter"></content-footer>
+      <!-- <content-footer v-if="!$route.meta.hideFooter"></content-footer> -->
     </div>
   </div>
 </template>
@@ -68,7 +68,7 @@ export default {
   components: {
     TopNavbar,
     DashboardContent,
-    ContentFooter,
+    // ContentFooter,
     MobileMenu,
     FixedPlugin
   },

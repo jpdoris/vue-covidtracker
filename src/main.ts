@@ -16,7 +16,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from "vue";
 import VueRouter from "vue-router";
-import App from "./App";
+import App from "@/App.vue";
+import store from "@/store";
 
 // router setup
 import routes from "./routes/routes";
@@ -37,6 +38,15 @@ const router = new VueRouter({
   linkExactActiveClass: "nav-item active"
 });
 
+Vue.filter("numberOut", (val, digits = 0) => {
+  const result = new Intl.NumberFormat("en-US", {
+    style: "decimal",
+    maximumFractionDigits: digits,
+    minimumFractionDigits: digits
+  }).format(val);
+  return result;
+});
+
 Vue.prototype.$Chartist = Chartist;
 
 Vue.use(VueRouter);
@@ -47,9 +57,10 @@ Vue.use(Notifications);
 
 /* eslint-disable no-new */
 new Vue({
+  router,
+  store,
   el: "#app",
   render: h => h(App),
-  router,
   data: {
     Chartist: Chartist
   }
